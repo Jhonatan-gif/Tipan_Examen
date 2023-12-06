@@ -24,7 +24,7 @@ int main() {
         }
         printf("\n");
     }
-    // Promedio del grupo para cada parcial
+    // Promedio del grupo para cada progreso
     float promedios[progresos];
     for (int j = 0; j < progresos; j++) {
         int suma = 0;
@@ -34,6 +34,11 @@ int main() {
         promedios[j] = (float)suma / alumnos;
     }
 
+    // Imprimir la nota promedio del grupo para cada progreso
+    printf("Nota promedio del grupo para cada progreso:\n");
+    for (int j = 0; j < progresos; j++) {
+        printf("Parcial %d: %.2f\n", j+1, promedios[j]);
+    }
 
 
     return 0;
