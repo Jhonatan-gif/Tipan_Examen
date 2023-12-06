@@ -40,6 +40,22 @@ int main() {
         printf("Parcial %d: %.2f\n", j+1, promedios[j]);
     }
 
+    // Encontrar el alumno con el puntaje más alto en todo el semestre
+    int maxPuntaje = 0;
+    int alumnoMaxPuntaje = 0;
+    for (int i = 0; i < alumnos; i++) {
+        int puntajeAlumno = 0;
+        for (int j = 0; j < progresos; j++) {
+            puntajeAlumno += calificaciones[i][j];
+        }
+        if (puntajeAlumno > maxPuntaje) {
+            maxPuntaje = puntajeAlumno;
+            alumnoMaxPuntaje = i;
+        }
+    }
+
+    // Imprimir el alumno con el puntaje más alto en todo el semestre
+    printf("Alumno con el puntaje mas alto en todo el semestre: Alumno %d\n", alumnoMaxPuntaje+1);
 
     return 0;
 }
