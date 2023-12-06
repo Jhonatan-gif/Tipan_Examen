@@ -15,6 +15,7 @@ int main() {
             calificaciones[i][j] = rand() % 11; // aleatoria entre 0 y 10
         }
     }
+
     // Imprimir las notas de los alumnos
     printf("Notas de los alumnos:\n");
     for (int i = 0; i < alumnos; i++) {
@@ -24,6 +25,23 @@ int main() {
         }
         printf("\n");
     }
+
+    // Calcular el promedio de calificaciones de cada alumno
+    float promedios_alumnos[alumnos];
+    for (int i = 0; i < alumnos; i++) {
+        int suma = 0;
+        for (int j = 0; j < progresos; j++) {
+            suma += calificaciones[i][j];
+        }
+        promedios_alumnos[i] = (float)suma / progresos;
+    }
+
+    // Imprimir el promedio de calificaciones de cada alumno
+    printf("\nPromedio de calificaciones de cada alumno:\n");
+    for (int i = 0; i < alumnos; i++) {
+        printf("Alumno %d: %.2f\n", i+1, promedios_alumnos[i]);
+    }
+
     // Promedio del grupo para cada progreso
     float promedios[progresos];
     for (int j = 0; j < progresos; j++) {
@@ -35,10 +53,12 @@ int main() {
     }
 
     // Imprimir la nota promedio del grupo para cada progreso
-    printf("Nota promedio del grupo para cada progreso:\n");
+    printf("\nNota promedio del grupo para cada progreso:\n");
     for (int j = 0; j < progresos; j++) {
         printf("Parcial %d: %.2f\n", j+1, promedios[j]);
     }
+
+    
 
     // Encontrar el alumno con el puntaje más alto en todo el semestre
     int maxPuntaje = 0;
@@ -55,7 +75,7 @@ int main() {
     }
 
     // Imprimir el alumno con el puntaje más alto en todo el semestre
-    printf("Alumno con el puntaje mas alto en todo el semestre: Alumno %d\n", alumnoMaxPuntaje+1);
+    printf("\nAlumno con el puntaje mas alto en todo el semestre: Alumno %d\n", alumnoMaxPuntaje+1);
 
     return 0;
 }
